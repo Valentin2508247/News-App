@@ -13,9 +13,11 @@
 
     <color name="button_night_color">#FFBB86FC</color>
 
-    <color name="primaryColor">#303f9f</color>
-    <color name="primaryLightColor">#666ad1</color>
-    <color name="primaryTextColor">#ffffff</color>
+
+    <color name="primaryColor">#f4511e</color>
+    <color name="primaryLightColor">#ff844c</color>
+    <color name="primaryDarkColor">#b91400</color>
+    <color name="primaryTextColor">#000000</color>
 
     <color name="cardViewBackground">#FF222222</color>
 </resources>

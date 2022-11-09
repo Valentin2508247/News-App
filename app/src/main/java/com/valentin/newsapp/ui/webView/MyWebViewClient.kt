@@ -9,5 +9,4 @@ class MyWebViewClient: WebViewClient() {
         view.loadUrl(request.url.toString())
         return true
     }
-
 }

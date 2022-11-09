@@ -24,23 +24,6 @@ class ItemViewHolder(
                 listener.showFull(item)
             }
         }
-//        binding.apply {
-//            tvAge.text = cat.age.toString()
-//            tvName.text = cat.name
-//            tvBreed.text = cat.breed
-//
-//            // delete cat
-//            ivDelete.setOnClickListener {
-//                listener.deleteCat(cat)
-//            }
-//
-//            // update cat
-//            ivEdit.setOnClickListener {
-//                listener.updateCat(cat)
-//            }
-//        }
-//        binding.tvAge.text = cat.age.toString()
-//        //Log.d(TAG, cat.toString())
     }
 
     private companion object {

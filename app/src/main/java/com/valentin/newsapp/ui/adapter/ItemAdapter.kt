@@ -7,12 +7,13 @@ import androidx.recyclerview.widget.ListAdapter
 import com.valentin.newsapp.databinding.NewsItemBinding
 import com.valentin.newsapp.models.Item
 
-class ItemAdapter(private val listener: IItemListener):
+class ItemAdapter(private val listener: IItemListener) :
     ListAdapter<Item, ItemViewHolder>(itemComparator) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding = NewsItemBinding.inflate(layoutInflater, parent, false)
+        binding.ivNewsImage.clipToOutline = true
         return ItemViewHolder(binding, listener)
     }
 

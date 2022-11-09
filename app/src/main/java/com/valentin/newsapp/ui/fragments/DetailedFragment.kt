@@ -34,7 +34,7 @@ class DetailedFragment : Fragment() {
         requireContext().appComponent.inject(this)
         viewModel = ViewModelProvider(requireActivity()).get(NewsViewModel::class.java)
         _binding = FragmentDetailedBinding.inflate(inflater, container, false)
-
+        listener.addGoToBrowserMenuButton()
 
         binding.webView.webViewClient = MyWebViewClient()
         binding.webView.loadUrl(args.url)
@@ -50,6 +50,7 @@ class DetailedFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+        listener.removeGoToBrowserMenuButton()
     }
 
     companion object {

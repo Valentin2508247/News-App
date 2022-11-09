@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
@@ -34,6 +35,10 @@ class MainActivity : AppCompatActivity(),
         appComponent.inject(this)
         viewModel = ViewModelProvider(this, viewModelFactory).get(NewsViewModel::class.java)
         binding = ActivityMainBinding.inflate(layoutInflater)
+        viewModel.errors.observe(this) {
+            Toast.makeText(this, "Not an rss feed!", Toast.LENGTH_LONG).show()
+        }
+
         setContentView(binding.root)
         setSupportActionBar(binding.myToolbar)
     }
@@ -58,11 +63,6 @@ class MainActivity : AppCompatActivity(),
             R.id.action_settings -> {
                 Log.d(TAG, "Navigate to settings")
                 navigate(R.id.action_global_settingsFragment)
-                true
-            }
-            R.id.action_theme -> {
-                Log.d(TAG, "Change theme")
-                changeTheme()
                 true
             }
             R.id.action_change_theme -> {
@@ -105,6 +105,14 @@ class MainActivity : AppCompatActivity(),
             AppCompatDelegate.MODE_NIGHT_NO
 
         AppCompatDelegate.setDefaultNightMode(theme)
+    }
+
+    override fun addGoToBrowserMenuButton() {
+
+    }
+
+    override fun removeGoToBrowserMenuButton() {
+
     }
 
     private companion object {

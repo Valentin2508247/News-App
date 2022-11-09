@@ -22,7 +22,7 @@ class NewsRepository(
                 imageUrl = imageUrl
             )
         }?.filter {
-            it.link != "" && it.title != ""
+            it.link != "" && it.title != "" && it.description != ""
         }
         return list ?: ArrayList()
     }
